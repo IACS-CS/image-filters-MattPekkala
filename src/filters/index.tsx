@@ -1,4 +1,5 @@
 import type { Filter } from "../types";
+import { colorShiftFilter } from "./colorShift";
 import { pixelateFilter } from "./pixelate";
 import {invertFilter} from "./invert";
 import {sepiaFilter} from './sepia';
@@ -8,6 +9,7 @@ import sampleRoseColoredGlasses from "./samples/roseColoredGlasses";
 import sampleGrid from "./samples/grid";
 import sampleVignette from "./samples/vignette";
 const filters: Filter[] = [
+  colorShiftFilter,
   pixelateFilter,
   invertFilter,
   sepiaFilter,

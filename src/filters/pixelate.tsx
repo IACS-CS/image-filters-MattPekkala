@@ -6,7 +6,7 @@ export const pixelateFilter: Filter = {
   name: "Pixelate",
   /* The function that actually does the work */
   apply: (pixels, width, height) => {
-    const pixelSize = 100;
+    const pixelSize = 50;
     for (let left = 0; left < width; left += pixelSize) {
       for (let top = 0; top < height; top += pixelSize) {
         // Our work to modify the image will go here!
