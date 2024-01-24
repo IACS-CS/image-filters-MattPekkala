@@ -1,17 +1,17 @@
 import { colors } from "react-select/dist/declarations/src/theme";
-import type { Filter } from "../types"; /* Import our Filter type */
+import type { Filter } from "../types"; 
+import { optionCSS } from "react-select/dist/declarations/src/components/Option";
 
-export const pixelateFilter: Filter = {
-  /* The name of our filter */
+type PixelateOptions = {
+  pixelSize: number;
+}
+
+export const pixelateFilter: Filter<PixelateOptions> = {
   name: "Pixelate",
-  /* The function that actually does the work */
-  apply: (pixels, width, height) => {
-    const pixelSize = 50;
+  apply: (pixels, width, height, options) => {
+    const pixelSize = Number(options.pixelSize);
     for (let left = 0; left < width; left += pixelSize) {
       for (let top = 0; top < height; top += pixelSize) {
-        // Our work to modify the image will go here!
-        // Loop through a rectangle and calculate
-        // the average R, G and B value...
         let avgR = 0;
         let avgG = 0;
         let avgB = 0;
@@ -30,9 +30,6 @@ export const pixelateFilter: Filter = {
         avgR = avgR / (pixelSize * pixelSize);
         avgG = avgG / (pixelSize * pixelSize);
         avgB = avgB / (pixelSize * pixelSize);
-        // Step 1:
-        // Loop through it again and set all pixels
-        // to the average...
 
         for (let row = top; row < top + pixelSize; row++) {
           for (let col = left; col < left + pixelSize; col++) {
@@ -49,4 +46,12 @@ export const pixelateFilter: Filter = {
     }
     return pixels;
   },
+  options : [
+    {
+      name : 'pixelSize',
+      type : 'number',
+      default: 20,
+      min : 0,
+    },  
+  ]
 };
