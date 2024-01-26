@@ -1,4 +1,5 @@
 import type { Filter } from "../types";
+import { afternoonLightingFilter } from "./afternoonLighting";
 import { colorShiftFilter } from "./colorShift";
 import { pixelateFilter } from "./pixelate";
 import {invertFilter} from "./invert";
@@ -9,6 +10,7 @@ import sampleRoseColoredGlasses from "./samples/roseColoredGlasses";
 import sampleGrid from "./samples/grid";
 import sampleVignette from "./samples/vignette";
 const filters: Filter[] = [
+  afternoonLightingFilter,
   colorShiftFilter,
   pixelateFilter,
   invertFilter,

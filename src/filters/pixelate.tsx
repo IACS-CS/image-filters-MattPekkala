@@ -52,6 +52,7 @@ export const pixelateFilter: Filter<PixelateOptions> = {
       type : 'number',
       default: 20,
       min : 0,
+      max: 1000,
     },  
   ]
 };
