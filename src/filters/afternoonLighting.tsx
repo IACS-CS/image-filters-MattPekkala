@@ -45,10 +45,5 @@ export const afternoonLightingFilter: Filter<AfternoonLightingOptions> = {
       min: 0,
       max: 50,
     },
-    {
-      name: "darkMode",
-      type: "boolean",
-      default: false,
-    },
   ],
 };
